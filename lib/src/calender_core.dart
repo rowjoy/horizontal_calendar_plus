@@ -118,13 +118,14 @@ class PackageCore extends CorePlus {
       return day == null || month == null ? formattedDate :  "$month $day";
     }else {
       // ignore: unnecessary_brace_in_string_interps
-      print("Hello ${formattedDate}");
       return formattedDate;
     }
     // return formattedDate;
   }
 
 }
+
+
 
 
 class CardContentView {
@@ -147,8 +148,6 @@ class CardContentView {
   this.iconSize = 20,
   this.iconColor = Colors.white,
 });
-
-  
 }
 
 
