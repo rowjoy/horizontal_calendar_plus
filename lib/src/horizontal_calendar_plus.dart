@@ -1,4 +1,4 @@
-// ignore_for_file: sized_box_for_whitespace, prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
+// ignore_for_file: sized_box_for_whitespace, prefer_const_constructors_in_immutables, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, unused_element
 
 import 'package:flutter/material.dart';
 import 'package:horizontal_calendar_plus/src/calender_core.dart';
@@ -89,7 +89,7 @@ class HorizontalCalendarPlus extends StatelessWidget {
                        side: boxBorderside == null ? BorderSide.none :  boxBorderside!(context, currentDateTime, index),
                        borderRadius: boxborderRadius!,
                     ),
-                    child: CardContent(isCurrentDate: isCurrentDate, packageCore: packageCore, calenderLabelformate: calenderLabelformate, calenderSubTitleformate: calenderSubTitleformate,cardViewDesign: cardViewDesign,),
+                    child: _CardContent(isCurrentDate: isCurrentDate, packageCore: packageCore, calenderLabelformate: calenderLabelformate, calenderSubTitleformate: calenderSubTitleformate,cardViewDesign: cardViewDesign,),
                   );
                 }else{
                    return customWidgetbuilder!(context, currentDateTime, index);
@@ -120,9 +120,9 @@ class HorizontalCalendarPlus extends StatelessWidget {
 
 }
 
-class CardContent extends StatelessWidget {
-
-  const CardContent({
+ // Custom widget card Ui design 
+ class _CardContent extends StatelessWidget {
+  const _CardContent({
     super.key,
      this.isCurrentDate,
      this.packageCore,
@@ -161,3 +161,5 @@ class CardContent extends StatelessWidget {
     );
   }
 }
+
+

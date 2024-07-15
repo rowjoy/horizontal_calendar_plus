@@ -1,7 +1,8 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+First version publish 0.0.1
 
+## 0.0.2
 
-# Horizantal Calender plus 
-  ->  First version publish 1.0.0
+Add Example & add document 
+

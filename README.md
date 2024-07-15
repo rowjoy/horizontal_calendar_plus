@@ -11,47 +11,34 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Flutter Horizantal calender plaus package . You easy to handel Horizantal calender . Always highlight current index you can change and modify it
 
 ## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
-
-
-# Horizantal Calender plus 
    1. Multiple country languages [HINDI, BANGLA, NAPILE, ENGLISH]
    2. DEFAUL show english 
    3. Use coustom design  widget build Horizantal Calender
    4. Access & Manage all function 
    5. Always highlight current index you can change and modify it
 
-```dart 
+## Getting started
 
+- [x]  Add this package your yaml file 
+
+```dart 
+  dependencies: 
+    horizontal_calendar_plus: 0.0.2
+```
+
+## Usage
+
+```dart 
   @override
   void initState() {
     super.initState();
+    // Start date time updater  
     HorizontalCalendarPlus.startDateTimeUpdater(_currentDateNotifier);
+
+    //Always highlight current index
     HorizontalCalendarPlus.jumpToCurrentIndex(scrollController);
   }
 
@@ -73,63 +60,74 @@ from the package authors, and more.
         changelanguage: Changelanguage.NAPILE,
         cardViewDesign: CardContentView(
         hideIcon: false,
-        // titletextActiveColor: Colors.red,
-        // titletextUnActiveColor: Colors.greenAccent,
         ),
-        /*
-        customWidgetbuilder: (context, dateTime, index) {
-        // return Text("hello ${index!}");
-        final packageCore = PackageCore(builderIndex: index, dateTime: dateTime, countPreviesDate: 3);
-        return Card(
-            color:  packageCore.dateFormatePlus() == packageCore.checkCurrentDate() ?  Colors.green :  Colors.black,
-            elevation: 2,
-            shape: RoundedRectangleBorder(
-                side: packageCore.dateFormatePlus() == packageCore.checkCurrentDate() ? BorderSide(width: 2,color: Colors.green) : BorderSide(width: 1,color: Colors.black),
-                borderRadius: BorderRadius.circular(10),
-            ),
-            shadowColor: Colors.black,
-            borderOnForeground: true,
-            margin: EdgeInsets.all(2),
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                Text( // Label 
-                    packageCore.showTitle(CalenderDateFormate.MONTH_DAY.skeleton),
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                ),
-                Text( // SubTitle text 
-                    packageCore.showSubTitle(CalenderDateFormate.WEEKDAY.skeleton), 
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                ],
-            ),
-            );
-        },
-        */
+        
     ),
 
 ```
 
 
-
+# Build Custom Widget
 
 ```dart 
-
-Text(
-    packageCore!.showTitle(calenderLabelformate!.skeleton),
-      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: isCurrentDate! ?  cardViewDesign!.titletextActiveColor : cardViewDesign!.titletextUnActiveColor ),
-    ),
-Text( 
-    packageCore!.showSubTitle(calenderSubTitleformate!.skeleton), 
-     style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: isCurrentDate! ?  cardViewDesign!.subTitletextActiveColor : cardViewDesign!.subtitletextUnActiveColor),
-),
-
-
+    designTypeCalender: DesignTypeCalender.CUSTOMDESIGN
+    customWidgetbuilder: (context, dateTime, index) {
+    final packageCore = PackageCore(builderIndex: index, dateTime: dateTime, countPreviesDate: 3);
+    return Card(
+        color:  packageCore.dateFormatePlus() == packageCore.checkCurrentDate() ?  Colors.green :  Colors.black,
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+            side: packageCore.dateFormatePlus() == packageCore.checkCurrentDate() ? BorderSide(width: 2,color: Colors.green) : BorderSide(width: 1,color: Colors.black),
+            borderRadius: BorderRadius.circular(10),
+        ),
+        shadowColor: Colors.black,
+        borderOnForeground: true,
+        margin: EdgeInsets.all(2),
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            Text( // Label 
+                packageCore.showTitle(CalenderDateFormate.MONTH_DAY.skeleton),
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+            ),
+            Text( // SubTitle text 
+                packageCore.showSubTitle(CalenderDateFormate.WEEKDAY.skeleton), 
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            ],
+        ),
+        );
+    },
+        
 ```
 
+
+
+
+
+
+# Change Calender Date Formate & Card Content
+```dart 
+  // add [skeleton] return String 
+  CalenderDateFormate.WEEKDAY.skeleton,
+  CalenderDateFormate.MONTH_DAY.skeleton,
+
+  // Card Content update card ui design 
+   CardContent 
+```
+
+
+
+
+
+
+
+
+# Package UI view 
+
 <td> 
- <img src="https://github.com/user-attachments/assets/9c59d834-96d3-4b12-aa89-47fdca51cb4c" alt = "Horizantal Calender plus">
+ <img src="https://github.com/user-attachments/assets/9c59d834-96d3-4b12-aa89-47fdca51cb4c" width="300" height="400" alt = "Horizantal Calender plus">
 </td>
 
 
